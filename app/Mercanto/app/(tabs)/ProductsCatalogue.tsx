@@ -1,48 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import './ProductCatalogue.css'; // Import your CSS file
 
-interface Product {
-  id: number;
-  name: string;
-  image: string;
-}
-
-const products: Product[] = [
-  { id: 1, name: 'Product 1', image: 'image1.jpg' },
-  { id: 2, name: 'Product 2', image: 'image2.jpg' },
-  
+const products = [
+  { id: 1, name: 'Awesome Product 1', price: 29.99, image: 'product1.jpg' },
+  { id: 2, name: 'Fantastic Product 2', price: 49.99, image: 'product2.jpg' },
+  // Add more products here...
 ];
 
-const App: React.FC = () => {
+function ProductCard(props : any) {
+  const { product } = props;
   return (
-    <div>
-      <header>
-        <h1>Mercato</h1>
-        <div className="dropdown">
-          <button type="button" onClick="myFunction()" className="dropdown-contenet">Products
-    <i className="fa fa-caret-down"></i>
-  </button>
-  <div className="dropdown-content" id="myDropdown">
-    <a href="#">Electronics</a>
-    <a href="#">Gloseries</a>
-    <a href="#">Contruction meterial</a>
-    <a href="#">Clothing</a>
-    <a href="#">House Appliacies</a>
+    <div className="product-card">
+      <img src={require(`./assets/images/Adidas.png`)} alt="Authentic and legic shoe" />
+      <h3>{product.name}</h3>
+      <p>${product.price}</p>
+      {/* Add a button for details/add to cart etc. */}
     </div>
-  </div> 
+  );
+}
 
-        <button type="button">Search</button>
-      </header>
+function ProductCatalogue() {
+  return (
+    <div className="product-catalogue">
+      <h2>Our Products</h2>
       <div className="product-grid">
-        {products.map(product => (
-          <div key={product.id} className="product">
-            <img src={product.image} alt={product.name} />
-            <p>{product.name}</p>
-          </div>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
   );
-};
+}
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default ProductCatalogue;
