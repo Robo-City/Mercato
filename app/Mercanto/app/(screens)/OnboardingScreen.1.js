@@ -61,13 +61,13 @@ const OnboardingScreen = ({ navigation }) => {
                 {
                     backgroundColor: '#FB923C',
                     image: <Image source={require('.../assets/images/onboarding-img2.png')} />,
-                    title: 'Share Your Favorites',
-                    subtitle: 'Share Your Thoughts With Similar Kind of People',
+                    title: 'Shop Online',
+                    subtitle: 'Dont stress yourself relax and enjoy shoping at the comfort of your homes',
                 },
                 {
                     backgroundColor: '#e9bcbe',
                     image: <Image source={require('.../assets/images/onboarding-img3.png')} />,
-                    title: 'Become The Star',
+                    title: 'The Market World brought To your Doorstep',
                     subtitle: "Let The Spot Light Capture You",
                 },
             ]} />
