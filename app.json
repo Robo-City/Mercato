@@ -1,0 +1,23 @@
+{
+    "expo": {
+      "name": "Mercato",
+      "slug": "mercato",
+      "version": "1.0.0",
+      "sdkVersion": "51.0.0",
+      "platforms": ["ios", "android", "web"],
+      "entryPoint": "./src/App.js",
+      "ios": {
+        "supportsTablet": true
+      },
+      "android": {
+        "adaptiveIcon": {
+          "foregroundImage": "./assets/adaptive-icon.png",
+          "backgroundColor": "#FFFFFF"
+        }
+      },
+      "web": {
+        "favicon": "./assets/favicon.png"
+      }
+    }
+  }
+  

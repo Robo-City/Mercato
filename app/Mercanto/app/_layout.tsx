@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { RecoilRoot } from "recoil";
 
+// import {TabBarIcon} from "@/components/navigation/TabBarIcon";
+
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
