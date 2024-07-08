@@ -8,11 +8,27 @@
       ]
     }
   },
+  "module.exports": {
+    "resolver": {
+      "assetExts": [
+        "png"
+      ],
+      "sourceExts": [
+        "ts",
+        "tsx"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "web"
+      ],
+    }
+  },
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    ".expo/types/**/*.tsx",
+    ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    ".expo/types/**/*.ts"
-, "app/(Onboarding)/Onboarding.tsx"  ]
+    "./app/**/*"
+  ]
 }
