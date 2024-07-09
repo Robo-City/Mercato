@@ -27,18 +27,19 @@ const onboardingData: OnboardingItem[] = [
   {
     id: "1",
     title: "Welcome to Mercato!",
-    description: "An online store that makes your modern life way easier.",
+    description:
+      "Discover a world of convenience at your fingertips. Mercato, your premier online marketplace.",
     image: <AntDesign name="shoppingcart" size={150} color="blue" />,
   },
   {
     id: "2",
-    title: "Your number one Online Store",
+    title: "Elevate Your Shopping Experience",
     description: "Enjoy a wonderful shopping experience.",
     image: <Entypo name="shop" size={150} color="#FF3B30" />,
   },
   {
     id: "3",
-    title: "sign up Today",
+    title: "Join the Mercato Movement",
     description:
       "Join today and feel the unimaginable power of online shopping.",
     image: <Ionicons name="filter" size={150} color="#4CD964" />,
@@ -94,7 +95,7 @@ const OnboardingScreen = () => {
   };
 
   return (
-    <LinearGradient colors={["#fff", "#222", "black"]} style={styles.container}>
+    <LinearGradient colors={["#000", "#222", "#000"]} style={styles.container}>
       <FlatList
         ref={flatListRef}
         data={onboardingData}
@@ -108,7 +109,7 @@ const OnboardingScreen = () => {
         }}
         renderItem={({ item }) => (
           <View style={styles.slide}>
-            <View style={styles.imageContainer}>{item.image}</View>
+            <View style={styles.iconContainer}>{item.image}</View>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.description}>{item.description}</Text>
           </View>
@@ -116,16 +117,26 @@ const OnboardingScreen = () => {
       />
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={handleSkip}>
-          <Text style={styles.buttonText}>Skip</Text>
+        <TouchableOpacity
+          onPress={handleSkip}
+          style={[styles.buttonCover, styles.nextButton]}
+        >
+          <Text style={[styles.buttonText, styles.nextButtonText]}>Skip</Text>
         </TouchableOpacity>
+
         {currentIndex === onboardingData.length - 1 ? (
-          <TouchableOpacity onPress={handleDone}>
-            <Text style={styles.buttonText}>Done</Text>
+          <TouchableOpacity
+            onPress={handleDone}
+            style={[styles.buttonCover, styles.doneButton]}
+          >
+            <Text style={[styles.buttonText, styles.doneButtonText]}>Done</Text>
           </TouchableOpacity>
         ) : (
-          <TouchableOpacity onPress={handleNext}>
-            <Text style={styles.buttonText}>Next</Text>
+          <TouchableOpacity
+            onPress={handleNext}
+            style={[styles.buttonCover, styles.nextButton]}
+          >
+            <Text style={[styles.buttonText, styles.nextButtonText]}>Next</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -157,7 +168,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 20,
   },
-  imageContainer: {
+  iconContainer: {
     marginBottom: 20,
   },
   title: {
@@ -174,21 +185,40 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: 30,
+    paddingHorizontal: 19,
     paddingVertical: 15,
-    color: "BEF264",
+    borderRadius: 20,
+    backgroundColor: "transparent",
     zIndex: 1,
   },
   buttonCover: {
-    backgroundColor: "rgba(255, 255, 255, 0.2)",
-    paddingHorizontal: 16,
+    paddingHorizontal: 30,
     paddingVertical: 8,
-    borderRadius: 8,
+    borderRadius: 19,
+    backgroundColor: "transparent",
   },
   buttonText: {
     fontSize: 16,
-    color: "#fff",
+    fontWeight: "semibold",
   },
+
+  nextButton: {
+    borderWidth: 2,
+    borderColor: "#BEF264",
+  },
+
+  nextButtonText: {
+    color: "#BEF264",
+  },
+
+  doneButton: {
+    backgroundColor: "#BEF264",
+  },
+
+  doneButtonText: {
+    color: "#000",
+  },
+
   dotsContainer: {
     flexDirection: "row",
     justifyContent: "center",
