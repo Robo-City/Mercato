@@ -29,20 +29,21 @@ const onboardingData: OnboardingItem[] = [
     title: "Welcome to Mercato!",
     description:
       "Discover a world of convenience at your fingertips. Mercato, your premier online marketplace.",
-    image: <AntDesign name="shoppingcart" size={150} color="blue" />,
+    image: <AntDesign name="shoppingcart" size={170} color="blue" />,
   },
   {
     id: "2",
     title: "Elevate Your Shopping Experience",
-    description: "Enjoy a wonderful shopping experience.",
-    image: <Entypo name="shop" size={150} color="#FF3B30" />,
+    description:
+      "Browse through our curated collections, discover trending products, and enjoy exclusive deals. With Mercato, shopping becomes an art form.",
+    image: <Entypo name="shop" size={180} color="#FF3B30" />,
   },
   {
     id: "3",
     title: "Join the Mercato Movement",
     description:
       "Join today and feel the unimaginable power of online shopping.",
-    image: <Ionicons name="filter" size={150} color="#4CD964" />,
+    image: <Ionicons name="filter" size={170} color="#4CD964" />,
   },
 ];
 
@@ -178,7 +179,7 @@ const styles = StyleSheet.create({
     color: "#ffff",
   },
   description: {
-    fontSize: 16,
+    fontSize: 13,
     textAlign: "center",
     color: "#ffff",
   },
