@@ -18,7 +18,7 @@ const DashboardApp = () => {
 			case 'Analytics':
 				return <AnalyticsSection />;
 			case 'Messages':
-				return <MessagesSection />;
+				return <MessageSection />;
 			case 'Tasks':
 				return <TasksSection />;
 			case 'Calendar':
@@ -57,7 +57,7 @@ const DashboardApp = () => {
 						<Icon name="person"
 							size={30} color="white" />
 						<Text style={styles.buttonText}>
-							Profile
+							Account
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
@@ -74,23 +74,23 @@ const DashboardApp = () => {
 				</View>
 			</View>
 			<View style={styles.featuresContainer}>
-				<PressableFeatureBox name="Analytics"
-					icon="stats-chart" onPress=
+				<PressableFeatureBox name="Home"
+					icon="home" onPress=
 					{
 						() => setActiveSection('Analytics')
 					} />
-				<PressableFeatureBox name="Messages"
-					icon="chatbox" onPress=
+				<PressableFeatureBox name="Stocks"
+					icon="bag" onPress=
 					{
 						() => setActiveSection('Messages')
 					} />
-				<PressableFeatureBox name="Tasks"
-					icon="checkbox-outline" onPress=
+				<PressableFeatureBox name="Explore"
+					icon="compass" onPress=
 					{
 						() => setActiveSection('Tasks')
 					} />
-				<PressableFeatureBox name="Calendar"
-					icon="calendar" onPress=
+				<PressableFeatureBox name="Promotions"
+					icon="gift" onPress=
 					{
 						() => setActiveSection('Calendar')
 					} />
@@ -124,7 +124,7 @@ const DashboardApp = () => {
 			<View style={styles.headerContainer}>
 				{renderBackButton()}
 				<Text style={styles.headerTitle}>
-					Settings Section
+					Settings 
 				</Text>
 			</View>
 			<View style={styles.contentContainer}>
@@ -172,17 +172,17 @@ const DashboardApp = () => {
 		</View>
 	);
 
-	const MessagesSection = () => (
+	const MessageSection = () => (
 		<View style={styles.container}>
 			<View style={styles.headerContainer}>
 				{renderBackButton()}
 				<Text style={styles.headerTitle}>
-					Messages Section
+					Info
 				</Text>
 			</View>
 			<View style={styles.contentContainer}>
 				<Text style={styles.contentText}>
-					Messages Content Goes Here
+					Info
 				</Text>
 
 			</View>
@@ -194,19 +194,19 @@ const DashboardApp = () => {
 			<View style={styles.headerContainer}>
 				{renderBackButton()}
 				<Text style={styles.headerTitle}>
-					Tasks Section
+					Explore
 				</Text>
 			</View>
 			<View style={styles.contentContainer}>
 				<Text style={styles.contentTitle}>
-					Upcoming Tasks
+					Explore Products
 				</Text>
-				<TaskItem title="Task 1"
-					description="Geekforgeeks contest." />
-				<TaskItem title="Task 2"
-					description="mock interview" />
-				<TaskItem title="Task 3"
-					description="Sample paper solution ." />
+				<TaskItem title="Clothes"
+					description="Chinese Clothes." />
+				<TaskItem title="Brands."
+					description="French, Louis." />
+				<TaskItem title="Food"
+					description="Crazy Food Stuffs ." />
 			</View>
 		</View>
 	);
@@ -215,30 +215,30 @@ const DashboardApp = () => {
 			<View style={styles.headerContainer}>
 				{renderBackButton()}
 				<Text style={styles.headerTitle}>
-					Calendar Section
+					Order
 				</Text>
 			</View>
 			<View style={styles.contentContainer}>
 				<Text style={styles.contentTitle}>
-					Events This Week
+					Sells This Week
 				</Text>
 				<EventItem
 					date="Mon, Jan 10"
 					time="3:00 PM - 5:00 PM"
-					title="Meeting with Team"
-					location="Office Conference Room"
+					title="Louis Vutton Handbags"
+					location= 'Price $34'
 				/>
 				<EventItem
 					date="Thu, Jan 13"
 					time="10:00 AM - 12:00 PM"
-					title="Client Presentation"
-					location="Online"
+					title="50% Discount on Food Stuffs"
+					location="Prices Ranging from $10 - $23"
 				/>
 				<EventItem
 					date="Sat, Jan 15"
 					time="6:00 PM - 8:00 PM"
-					title="Dinner with Friends"
-					location="Local Restaurant"
+					title="Gucci Slippers, Flip Flops, Face Exoliators"
+					location="Affordable Prices From $45 - $79"
 				/>
 			</View>
 		</View>
@@ -309,7 +309,7 @@ const DashboardApp = () => {
 			borderRadius: 5,
 		},
 		buttonText: {
-			color: 'pink',
+			color: 'black',
 			fontSize: 16,
 			fontWeight: 'bold',
 			marginLeft: 10,
