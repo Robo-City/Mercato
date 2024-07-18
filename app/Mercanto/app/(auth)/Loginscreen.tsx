@@ -1,99 +1,99 @@
-// LoginScreen.js
-import { Link, router } from "expo-router";
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from 'expo-router';
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
-const LoginScreen = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
-    // Implement your login logic here
-    // For simplicity, I'm just navigating to a Home screen
-    router.replace("/(tabs)");
-  };
-
+export default function LoginScreen({ }) {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Login Screen</Text>
-      <View style={styles.formContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Username"
-          value={username}
-          onChangeText={setUsername}
+    <ImageBackground 
+      source={{ uri: 'https://images.unsplash.com/photo-1639452127871-8c6ea78d2b11?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }} 
+      style={styles.background}
+    >
+      <View style={styles.container}>
+        <Text style={styles.title}>Mercato</Text>
+        <Text style={styles.subtitle}>
+          Shop smarter, live better with Mercato.
+        </Text>
+        <TextInput 
+          placeholder="Email" 
+          placeholderTextColor="#fffdfd" 
+          style={styles.input} 
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          secureTextEntry
-          value={password}
-          onChangeText={setPassword}
+        <TextInput 
+          placeholder="Password" 
+          placeholderTextColor="#ffffff" 
+          secureTextEntry 
+          style={styles.input} 
         />
-        <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
-          <Text style={styles.loginText}>LOGIN</Text>
+        <TouchableOpacity 
+          style={styles.button} 
+          onPress={() => router.replace('./(tabs)')}
+        >
+          <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.forgot}>Forgot Password?</Text>
+
+        <TouchableOpacity 
+          style={[styles.button, styles.buttonOutline]} 
+          onPress={() => {router.replace('./(auth)/createAccout')}}
+        >
+          <Text style={[styles.buttonText, styles.buttonOutlineText]}>Create Account</Text>
         </TouchableOpacity>
+
       </View>
-    </SafeAreaView>
+    </ImageBackground>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container: {
+    width: '80%',
+    alignItems: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: '#fff',
     marginBottom: 20,
-    fontWeight: "bold",
-    color: "#333",
   },
-  formContainer: {
-    width: "80%",
-    alignItems: "center",
+  subtitle: {
+    fontSize: 18,
+    color: '#d0cbb7',
+    textAlign: 'center',
+    marginBottom: 40,
   },
   input: {
-    height: 40,
-    width: "100%",
-    borderWidth: 1,
-    borderColor: "#ccc",
-    marginBottom: 20,
-    paddingHorizontal: 10,
-    borderRadius: 8,
-  },
-  loginBtn: {
-    width: "100%",
+    width: '100%',
     height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ff5c33",
+    backgroundColor: '#333',
     borderRadius: 25,
-    marginTop: 20,
+    paddingLeft: 20,
+    marginBottom: 20,
+    color: '#fff',
   },
-  loginText: {
-    color: "#fff",
+  button: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#5aaf54',
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  buttonOutline: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#5aaf54',
+  },
+  buttonText: {
+    color: '#fff',
     fontSize: 16,
+    fontWeight: 'bold',
   },
-  forgot: {
-    marginTop: 10,
-    color: "#555",
-    fontSize: 12,
-    textDecorationLine: "underline",
+  buttonOutlineText: {
+    color: '#5aaf54',
   },
 });
-
-export default LoginScreen;
