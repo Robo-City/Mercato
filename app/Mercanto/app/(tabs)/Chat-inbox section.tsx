@@ -123,12 +123,7 @@ const ChatInbox = () => {
             </TouchableOpacity>
           </View>
         )}
-        <View style={styles.bottomNavigation}>
-          <Text style={styles.navItem}>🏠</Text>
-          <Text style={[styles.navItem, styles.activeNavItem]}>💬</Text>
-          <Text style={styles.navItem}>📊</Text>
-          <Text style={styles.navItem}>⚙</Text>
-        </View>
+
         <View style={styles.messageInputContainer}>
           <TextInput
             style={styles.input}
