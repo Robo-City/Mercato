@@ -13,7 +13,7 @@ const ProfileScreen: React.FC = () => {
       <View style={styles.profileSection}>
         <Image 
           style={styles.avatar} 
-          source={{ uri: 'https://example.com/avatar.png' }} // Replace with your avatar URL
+          source={{ uri: 'https://example.com/avatar.png' }} 
         />
         <Text style={styles.name}>hendie</Text>
         <Text style={styles.info}>8967452743</Text>
