@@ -32,6 +32,32 @@ export default function TabLayout() {
           ),
         }}
       />
+      {/* <Tabs.Screen
+        name="explore"
+        options={{
+          title: 'Cart',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'cart' : 'code-slash-outline'} color={color} />
+          ),
+        }}
+      /> */}
+
+      <Tabs.Screen
+      name='MapScreen'
+      options={{
+        href: null
+      }}/>
+       <Tabs.Screen
+      name='personalProfile'
+      options={{
+        href: null
+      }}/>
+
+<Tabs.Screen
+      name='About'
+      options={{
+        href: null
+      }}/>
     </Tabs>
   );
 }
