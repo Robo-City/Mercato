@@ -56,6 +56,7 @@ const SettingsScreen = () => {
           console.log('Settings saved:', { notificationsEnabled, language, name, email });
         }}
       />
+      
     </ScrollView>
   );
 };

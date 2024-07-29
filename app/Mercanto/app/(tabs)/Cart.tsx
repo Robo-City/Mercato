@@ -1,6 +1,9 @@
 import React from 'react';
 import { SafeAreaView, View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+// type item = {
+  
 
+// }
 const Cart = () => {
   const cartItems = [
     {

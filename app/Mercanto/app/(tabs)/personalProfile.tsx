@@ -34,7 +34,7 @@ const ProfileScreen: React.FC = () => {
 
 const MenuItem: React.FC<MenuItemProps> = ({ icon, title }) => (
   <TouchableOpacity style={styles.menuItem}>
-    <Ionicons name={icon} size={24} color="#f26a4b" />
+    <Ionicons name:any={icon} size={24} color="#f26a4b" />
     <Text style={styles.menuItemText}>{title}</Text>
   </TouchableOpacity>
 );

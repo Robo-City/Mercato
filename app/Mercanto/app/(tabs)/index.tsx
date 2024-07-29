@@ -1,4 +1,5 @@
 // screens/ShopScreen.js
+import { Link } from 'expo-router';
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
 
@@ -33,12 +34,13 @@ const HomeScreen = () => {
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <View style={styles.productCard}>
+            <Link href={"./product_detal"}>
             <Image source={item.image} style={styles.productImage} />
             <Text style={styles.productName}>{item.name}</Text>
             <Text style={styles.productPrice}>{item.price}</Text>
             <Text style={styles.productSold}>{item.sold} sold</Text>
             <Text style={styles.productRating}>{item.rating} ⭐</Text>
-          </View>
+          </Link></View>
         )}
         numColumns={2}
         contentContainerStyle={styles.productList}
