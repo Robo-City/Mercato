@@ -47,15 +47,20 @@ export default function TabLayout() {
       options={{
         href: null
       }}/>
-       <Tabs.Screen
+       {/* <Tabs.Screen
       name='personalProfile'
       options={{
         href: null
-      }}/>
+      }}/> */}
           <Tabs.Screen
       name='product_detal'
       options={{
         href: null
+      }}/>
+      <Tabs.Screen
+      name='Buy_now'
+      options={{
+        href:null
       }}/>
 
 <Tabs.Screen

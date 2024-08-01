@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
 type MenuItemProps = {
   icon: string;
@@ -33,10 +34,10 @@ const ProfileScreen: React.FC = () => {
 };
 
 const MenuItem: React.FC<MenuItemProps> = ({ icon, title }) => (
-  <TouchableOpacity style={styles.menuItem}>
-    <Ionicons name:any={icon} size={24} color="#f26a4b" />
+  <Link href={''}style={styles.menuItem}>
+    <Ionicons name={icon} size={24} color="#f26a4b" />
     <Text style={styles.menuItemText}>{title}</Text>
-  </TouchableOpacity>
+  </Link>
 );
 
 const styles = StyleSheet.create({
