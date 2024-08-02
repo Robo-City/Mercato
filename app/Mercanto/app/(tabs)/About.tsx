@@ -10,7 +10,8 @@ const AboutScreen = () => {
         Welcome to our Zambian E-commerce app. We are dedicated to providing you with the best online shopping experience. Our app offers a wide range of products sourced locally and internationally. Our mission is to make shopping convenient and accessible for everyone in Zambia.
       </Text>
       <Text style={styles.paragraph}>
-        Contact Us:
+        Contact Us: 9087668
+        
       </Text>
       <Text style={styles.paragraph}>
         Email: support@zambianecommerce.com
